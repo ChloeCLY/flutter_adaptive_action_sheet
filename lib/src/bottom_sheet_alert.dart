@@ -62,6 +62,7 @@ Future<T?> _show<T>(
     return _showCupertinoBottomSheet(
       context,
       title,
+      barrierColor,
       actions,
       cancelAction,
       isDismissible: isDismissible,
@@ -83,6 +84,7 @@ Future<T?> _show<T>(
 Future<T?> _showCupertinoBottomSheet<T>(
   BuildContext context,
   Widget? title,
+  Color? barrierColor,
   List<BottomSheetAction> actions,
   CancelAction? cancelAction, {
   bool isDismissible = true,
@@ -92,6 +94,7 @@ Future<T?> _showCupertinoBottomSheet<T>(
   return showCupertinoModalPopup(
     context: context,
     barrierDismissible: isDismissible,
+    barrierColor: barrierColor ?? kCupertinoModalBarrierColor,
     builder: (BuildContext coxt) {
       return CupertinoActionSheet(
         title: title,
